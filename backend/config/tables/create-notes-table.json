@@ -1,0 +1,49 @@
+{
+  "TableName": "notesTable",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "userID",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "noteID",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "lastEditTimestamp",
+      "AttributeType": "N"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "userID",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "noteID",
+      "KeyType": "RANGE"
+    }
+  ],
+  "LocalSecondaryIndexes": [
+    {
+      "IndexName": "lastEdit",
+      "KeySchema": [
+        {
+          "AttributeName": "userID",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "lastEditTimestamp",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    }
+  ],
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  }
+}
