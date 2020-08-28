@@ -2,107 +2,104 @@ $bg-color: #222;
 // $body-color: #fff;
 
 ::-webkit-scrollbar {
-  width: 6px;
+	width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+	background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+	background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+	background: #555;
 }
 
 ::-webkit-resizer {
-  display: none;
+	display: none;
 }
 
 .nav {
-  position: fixed;
-  height: 4rem;
+	position: fixed;
+	height: 4rem;
 }
 
 .side-bar {
-  background: $bg-color;
-  height: calc(100vh - 4rem);
+	background: $bg-color;
+	height: calc(100vh - 4rem);
 }
 
 .category {
-  background: $bg-color;
-  font-size: large;
-  color: #ddd;
-  border-bottom: 2px solid #333;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  padding-left: 1.25rem;
+	background: $bg-color;
+	font-size: large;
+	color: #ddd;
+	border-bottom: 2px solid #333;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	padding-left: 1.25rem;
 }
 
 .category:hover {
-  background: #444;
-  cursor: pointer;
+	background: #444;
+	cursor: pointer;
 }
 
 .current-category {
-  background: #ddd;
-  color: #222;
+	background: #ddd;
+	color: #222;
 }
 
 .current-category:hover {
-  background: #ddd;
+	background: #ddd;
 }
 
 #note-list {
-  height: calc(100vh - 4rem);
-  overflow: hidden;
+	height: calc(100vh - 4rem);
+	overflow: hidden;
 }
 
 #note-list:hover {
-  overflow: auto;
+	overflow: auto;
 }
 
 .note-list-info {
-  background: #eee;
-  padding: 10px 20px;
-  border: 2px solid #aaa;
-  border-radius: 1px;
-  height: 8rem;
+	background: #eee;
+	padding: 10px 20px;
+	border: 2px solid #aaa;
+	border-radius: 1px;
+	height: 6rem;
 }
 
 .note {
-  background: #f5f5f5;
-  padding: 10px 20px;
-  border: 1px solid #ddd;
-  border-radius: 1px;
-  height: 5rem;
+	background: #f5f5f5;
+	padding: 10px 20px;
+	border: 1px solid #ddd;
+	border-radius: 1px;
+	height: 6rem;
 }
 
 .current-note {
-  background: #ddd;
-  border: 3px solid #777;
-  padding: 8px 18px;
+	background: #ddd;
+	border: 3px solid #777;
+	padding: 8px 18px;
 }
 
 .note-panel {
-  padding: 0;
-  height: calc(100vh - 4rem);
-  display: flex;
-  flex-direction: column;
+	padding: 0;
+	height: calc(100vh - 4rem);
+	display: flex;
+	flex-direction: column;
 }
 
 .note-panel-header {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
 }
 
-$theme-colors: (
-  "dark": #222,
-  "gray": #777,
-);
+$theme-colors: ("dark": #222, "gray": #777);
 
 @import "~bootstrap/scss/bootstrap.scss";

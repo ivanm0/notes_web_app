@@ -1,10 +1,10 @@
-import * as actions from "./types";
+import * as actions from './types';
 
-export const loadUser = (username, accessToken) => ({
-  type: actions.LOAD_USER,
-  payload: { username, accessToken },
+export const loadUser = (name, accessToken) => ({
+	type: actions.LOAD_USER,
+	payload: { name, accessToken }
 });
 
 export const logoutUser = () => ({
-  type: actions.LOGOUT_USER,
+	type: actions.LOGOUT_USER
 });
