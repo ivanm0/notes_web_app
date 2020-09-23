@@ -1,0 +1,9 @@
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/restart_server.sh
+      timeout: 300
+      runas: root
