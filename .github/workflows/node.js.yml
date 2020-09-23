@@ -39,7 +39,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-        aws-region: us-west-1
+        aws-region: us-west-2
     - uses: actions/checkout@v2
     - id: deploy
       uses: webfactory/create-aws-codedeploy-deployment@v0.2.1
