@@ -11,10 +11,6 @@ hooks:
 branch_config:
   master:
     deploymentGroupName: production
-    deploymentGroupConfig:
-      serviceRoleArn: arn:aws:iam::1234567890:role/CodeDeployProductionRole
-      ec2TagFilters:
-        - { Type: KEY_AND_VALUE, Key: node_class, Value: production }
     deploymentConfig:
       autoRollbackConfiguration:
         enabled: true
