@@ -1,5 +1,5 @@
 #!/bin/sh
-cd backend/
+cd /var/www/notes_web_app/backend/
 npm install
 cd ../frontend/
 npm install

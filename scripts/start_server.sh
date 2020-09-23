@@ -1,6 +1,6 @@
 #!/bin/sh
 pm2 start server
-cd frontend/
+cd /var/www/notes_web_app/frontend/
 npm run build
 systemctl start nginx
 chmod +x scripts/start_server.sh
