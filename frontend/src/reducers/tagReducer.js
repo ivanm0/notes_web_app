@@ -14,7 +14,7 @@ export default (state = initialState, { type, payload }) => {
 		case actions.FETCH_TAGS_SUCCESS:
 			return {
 				...state,
-				items: payload.tags ? payload.tags.names : state.tags.items
+				items: payload.tags ? payload.tags.names : state.items
 			};
 		default:
 			return state;

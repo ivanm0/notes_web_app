@@ -40,7 +40,7 @@ function App() {
 				});
 			};
 
-			if (!isLoading && isAuthenticated) getNotes();
+			if (isAuthenticated) getNotes();
 		},
 		[ isLoading, isAuthenticated ]
 	);

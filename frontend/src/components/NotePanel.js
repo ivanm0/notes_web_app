@@ -47,23 +47,25 @@ const NotePanel = () => {
 
 	useEffect(
 		() => {
-			if (!creatingNote && titleRef.current) titleRef.current.focus();
+			if (creatingNote === false && titleRef.current) titleRef.current.focus();
 		},
 		[ creatingNote ]
 	);
 
 	useEffect(
 		() => {
-			if (bodyRef.current || actualBodyRef.current) {
-				if (bodyRef.current) actualBodyRef.current = bodyRef.current;
-				actualBodyRef.current.focus();
-				actualBodyRef.current.editorManager.activeEditor.selection.select(
-					actualBodyRef.current.editorManager.activeEditor.getBody(),
-					true
-				);
-				actualBodyRef.current.editorManager.activeEditor.selection.collapse(false);
+			if (isSwitchingNotes) {
+				if (bodyRef.current || actualBodyRef.current) {
+					if (bodyRef.current) actualBodyRef.current = bodyRef.current;
+					actualBodyRef.current.focus();
+					actualBodyRef.current.editorManager.activeEditor.selection.select(
+						actualBodyRef.current.editorManager.activeEditor.getBody(),
+						true
+					);
+					actualBodyRef.current.editorManager.activeEditor.selection.collapse(false);
+				}
+				dispatch(finishSwitching());
 			}
-			dispatch(finishSwitching());
 		},
 		[ isSwitchingNotes ]
 	);
