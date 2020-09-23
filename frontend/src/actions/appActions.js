@@ -37,7 +37,7 @@ export const fetchNotesAndTags = (accessToken, id) => async (dispatch) => {
 		});
 		dispatch({
 			type: actions.FETCH_TAGS_SUCCESS,
-			payload: { tags: tagsJSON.Items[0] }
+			payload: { tags: tagsJSON.Items[0] || {} }
 		});
 	} catch (e) {
 		console.log(e);
