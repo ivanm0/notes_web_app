@@ -5,7 +5,7 @@ export const createTag = (accessToken, tagName) => (dispatch) => {
 		type: actions.CREATE_TAG
 	});
 	try {
-		fetch(`http://localhost:5000/api/tags/${tagName}`, {
+		fetch(process.env.REACT_APP_API_URL + `api/tags/${tagName}`, {
 			headers: {
 				Authorization: `Bearer ${accessToken}`
 			},
@@ -32,7 +32,7 @@ export const fetchTags = (accessToken) => (dispatch) => {
 		dispatch({
 			type: 'FETCH_TAGS_REQUEST'
 		});
-		fetch('http://localhost:5000/api/tags', {
+		fetch(process.env.REACT_APP_API_URL + 'api/tags', {
 			headers: {
 				Authorization: `Bearer ${accessToken}`
 			}

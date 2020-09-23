@@ -5,7 +5,7 @@ export const fetchNotes = (accessToken, id) => (dispatch) => {
 		dispatch({
 			type: 'FETCH_NOTES_REQUEST'
 		});
-		fetch('http://localhost:5000/api/notes', {
+		fetch(process.env.REACT_APP_API_URL + 'api/notes', {
 			headers: {
 				Authorization: `Bearer ${accessToken}`
 			}
@@ -42,7 +42,7 @@ export const createNote = (accessToken) => (dispatch) => {
 		type: actions.CREATE_NOTE_REQUEST
 	});
 	try {
-		fetch('http://localhost:5000/api/notes', {
+		fetch(process.env.REACT_APP_API_URL + 'api/notes', {
 			headers: {
 				Authorization: `Bearer ${accessToken}`
 			},
@@ -69,7 +69,7 @@ export const deleteNote = (accessToken, id) => (dispatch) => {
 		type: actions.DELETE_NOTE_REQUEST
 	});
 	try {
-		fetch(`http://localhost:5000/api/notes/${id}`, {
+		fetch(process.env.REACT_APP_API_URL + `api/notes/${id}`, {
 			headers: {
 				Authorization: `Bearer ${accessToken}`
 			},
@@ -114,7 +114,7 @@ export const saveToDatabase = (accessToken, id, title, body) => (dispatch) => {
 		type: actions.SAVE_TO_DATABASE_REQUEST
 	});
 	try {
-		fetch(`http://localhost:5000/api/notes/${id}`, {
+		fetch(process.env.REACT_APP_API_URL + `api/notes/${id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ export const searchNotes = (accessToken, query) => (dispatch) => {
 		type: actions.SEARCH_REQUEST
 	});
 	try {
-		fetch(`http://localhost:5000/api/notes/search/${query}`, {
+		fetch(process.env.REACT_APP_API_URL + `api/notes/search/${query}`, {
 			headers: {
 				Authorization: `Bearer ${accessToken}`
 			}
@@ -182,7 +182,7 @@ export const addTag = (accessToken, noteID, tag) => (dispatch) => {
 		type: actions.ADD_TAG_REQUEST
 	});
 	try {
-		fetch(`http://localhost:5000/api/notes/tag/${noteID}`, {
+		fetch(process.env.REACT_APP_API_URL + `api/notes/tag/${noteID}`, {
 			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json',
@@ -217,7 +217,7 @@ export const removeTag = (accessToken, noteID, tag) => (dispatch) => {
 		type: actions.REMOVE_TAG_REQUEST
 	});
 	try {
-		fetch(`http://localhost:5000/api/notes/tag/${noteID}`, {
+		fetch(process.env.REACT_APP_API_URL + `api/notes/tag/${noteID}`, {
 			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json',
@@ -252,7 +252,7 @@ export const changeCategory = (accessToken, tag) => (dispatch) => {
 		type: actions.CHANGE_CATEGORY_REQUEST
 	});
 	try {
-		fetch(`http://localhost:5000/api/notes/search/tag/${tag}`, {
+		fetch(process.env.REACT_APP_API_URL + `api/notes/search/tag/${tag}`, {
 			headers: {
 				Authorization: `Bearer ${accessToken}`
 			}

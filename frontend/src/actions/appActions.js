@@ -8,9 +8,9 @@ export const fetchNotesAndTags = (accessToken, id) => async (dispatch) => {
 		dispatch({
 			type: actions.FETCH_TAGS_REQUEST
 		});
-		const urls = [ 'http://localhost:5000/api/notes', 'http://localhost:5000/api/tags' ];
+		const urls = [ 'api/notes', 'api/tags' ];
 		const requests = urls.map((url) =>
-			fetch(url, {
+			fetch(process.env.REACT_APP_API_URL + url, {
 				headers: {
 					Authorization: `Bearer ${accessToken}`
 				}
