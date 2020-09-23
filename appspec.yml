@@ -1,3 +1,13 @@
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/restart_server.sh
+      timeout: 300
+      runas: root
+      
 branch_config:
   master:
     deploymentGroupName: production
@@ -8,13 +18,3 @@ branch_config:
     deploymentConfig:
       autoRollbackConfiguration:
         enabled: true
-
-hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-      runas: root
-  ApplicationStart:
-    - location: scripts/restart_server.sh
-      timeout: 300
-      runas: root
