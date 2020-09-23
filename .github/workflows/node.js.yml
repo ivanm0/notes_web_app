@@ -41,7 +41,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
         aws-region: us-west-2
     - uses: actions/checkout@v2
-    - id: deploy
-      uses: webfactory/create-aws-codedeploy-deployment@v0.2.1
+    - name: CodeDeploy
+      uses: byu-oit/github-action-codedeploy@v1
       with:
-        application: notes_web_app
+        application-name: notes_web_app
+        deployment-group-name: production
+        appspec-file: appspec.yml
