@@ -23,10 +23,17 @@ const checkJwt = jwt({
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+	res.send('hello world');
+});
 app.use(checkJwt);
 app.use('/api/notes', require('./routes/api/notes'));
 app.use('/api/tags', require('./routes/api/tags'));
 
-app.listen(port, () => {
-	console.log(`Server is running on port: ${port}`);
-});
+if (!module.parent) {
+	app.listen(port, () => {
+		console.log(`Server is running on port: ${port}`);
+	});
+}
+
+module.exports = app;
