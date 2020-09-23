@@ -13,6 +13,3 @@ hooks:
 branch_config:
   master:
     deploymentGroupName: production
-    deploymentConfig:
-      autoRollbackConfiguration:
-        enabled: true
