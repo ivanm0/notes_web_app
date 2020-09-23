@@ -6,7 +6,7 @@ router
 	.route('/')
 	// get all tags
 	.get((req, res) => {
-		if (process.env.NODE_ENV === 'production') {
+		if (process.env.NODE_ENV === 'development') {
 			AWS.config.update({
 				endpoint: 'http://localhost:8000'
 			});
@@ -33,7 +33,7 @@ router
 	.route('/:tag_name')
 	// create tag
 	.post((req, res) => {
-		if (process.env.NODE_ENV === 'production') {
+		if (process.env.NODE_ENV === 'development') {
 			AWS.config.update({
 				endpoint: 'http://localhost:8000'
 			});
@@ -63,7 +63,7 @@ router
 	})
 	// delete tag
 	.delete((req, res) => {
-		if (process.env.NODE_ENV === 'production') {
+		if (process.env.NODE_ENV === 'development') {
 			AWS.config.update({
 				endpoint: 'http://localhost:8000'
 			});
