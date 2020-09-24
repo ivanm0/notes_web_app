@@ -3,6 +3,12 @@ os: linux
 files:
   - source: /
     destination: /var/www/notes_web_app
+permissions:
+  - object: /var/www/notes_web_app/scripts
+    mode: 755
+    pattern: "**"
+    owner: root
+    group: root
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh

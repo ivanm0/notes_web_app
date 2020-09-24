@@ -15,7 +15,7 @@ const Navigation = () => {
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Col md="2">
 					<Navbar.Brand style={{ fontSize: '1.5rem' }} className="brand" href="/">
-						IMnotes
+						IM.notes
 					</Navbar.Brand>
 				</Col>
 				<Col md="7">{isAuthenticated && <SearchBar />}</Col>
